@@ -99,9 +99,9 @@ function paintLine(g,x1,y1,x2,y2,team){const d=Math.hypot(x2-x1,y2-y1),steps=Mat
 function tileAt(g,x,y){const idx=cellIndex(x,y);return idx<0?0:g.territory[idx]||0;}
 function nearestEnemy(g,p){let best=null,dist=Infinity;for(const q of g.players){if(q.team===p.team||!q.alive||q.shadow>=MAX_SHADOW-1e-6)continue;const d=Math.hypot(q.x-p.x,q.y-p.y);if(d<dist){dist=d;best=q;}}return best?{p:best,d:dist}:null;}
 const WEAPONS = [
- {name:'標準ブラスター',range:1,interval:0.52,damage:27,cost:0.65,speed:180,charge:false},
- {name:'ロングレンジ',range:2,interval:1.04,damage:32.4,cost:2,speed:180,charge:false},
- {name:'チャージスナイパー',range:3,interval:0.25,damage:45,cost:0,speed:240,charge:true,maxCharge:1.5,chargeCostPerSec:4}
+ {name:'標準ブラスター',range:1,interval:0.52,damage:27,cost:2,speed:180,charge:false},
+ {name:'ロングレンジ',range:3,interval:1.04,damage:32.4,cost:4,speed:180,charge:false},
+ {name:'チャージスナイパー',range:5,interval:0.25,damage:45,cost:0,speed:300,charge:true,maxCharge:1.5,chargeCostPerSec:30}
 ];
 function shoot(g,p,angle,charge=0){
  if(!p.alive||p.cooldown>0)return;

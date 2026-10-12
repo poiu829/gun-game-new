@@ -102,9 +102,9 @@ function nearestEnemy(g,p){let best=null,dist=Infinity;for(const q of g.players)
 // paintRadius：弾道の周囲を塗る半径。大きいほど太い塗り跡になります。
 // bulletRadius：敵に当たる判定に使う弾の半径。大きいほど命中しやすくなります。
 const WEAPONS = [
- {name:'標準ブラスター',range:1,interval:0.52,damage:27,cost:0.65,speed:180,charge:false,paintRadius:38.4,bulletRadius:4},
- {name:'ロングレンジ',range:2,interval:1.04,damage:32.4,cost:2,speed:180,charge:false,paintRadius:30,bulletRadius:6},
- {name:'チャージスナイパー',range:3,interval:0.25,damage:45,cost:0,speed:240,charge:true,maxCharge:1.5,chargeCostPerSec:4,paintRadius:52,bulletRadius:8}
+ {name:'標準ブラスター',range:1,interval:0.52,damage:27,cost:0.65,speed:180,charge:false,paintRadius:5,bulletRadius:4},
+ {name:'ロングレンジ',range:2,interval:1.04,damage:32.4,cost:2,speed:180,charge:false,paintRadius:10,bulletRadius:7},
+ {name:'チャージスナイパー',range:3,interval:0.25,damage:45,cost:0,speed:240,charge:true,maxCharge:1.5,chargeCostPerSec:4,paintRadius:15,bulletRadius:9}
 ];
 function shoot(g,p,angle,charge=0){
  if(!p.alive||p.cooldown>0)return;
